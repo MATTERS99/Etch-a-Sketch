@@ -1,0 +1,17 @@
+
+.item {
+    background-color: blue;
+    box-sizing: border-box;
+    flex-shrink: 0;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    width: 960px;
+    height:960px;
+}
+.new{
+    background-color: brown;
+}

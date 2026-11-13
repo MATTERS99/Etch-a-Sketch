@@ -12,8 +12,14 @@ function createGrid(r) {
     b.style.height = w + "px";
     b.classList.add("item");
     a.appendChild(b);
+    let r=1;
     b.addEventListener("mouseenter", () => {
-      b.classList.add("new");
+      let red = Math.floor(Math.random() * 256);
+      let green = Math.floor(Math.random() * 256);
+      let blue = Math.floor(Math.random() * 256);
+      b.style.backgroundColor=`rgb(${red},${green},${blue})`;
+      b.style.opacity=r
+      r-=0.1;
     });
   }
 }
@@ -21,12 +27,11 @@ function createGrid(r) {
 c.addEventListener("click", () => {
   let d = prompt("number of squares per side for the new grid");
   r = +d;
-  if (Number.isInteger(r) && r>=1 && r<=100) {
-        createGrid(r);
-    }
-    else if (d!==null) {
-        alert("Enter a valid number between 1 and 100");
-    } else{
-      alert("Enter a valid number between 1 and 100");
-    }
+  if (Number.isInteger(r) && r >= 1 && r <= 100) {
+    createGrid(r);
+  } else if (d !== null) {
+    alert("Enter a valid number between 1 and 100");
+  } else {
+    alert("Enter a valid number between 1 and 100");
+  }
 });
